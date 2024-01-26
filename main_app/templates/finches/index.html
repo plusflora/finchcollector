@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+
+  <h1>Finch List</h1>
+
+  {% for finch in finches %}
+    <div class="card">
+      <a href="{% url 'detail' finch.id %}">
+        <div class="card-content">
+          <span class="card-title">{{finch.species}}</span>
+          <p>Population: {{finch.population}}</p>
+          <p>Habitat: {{finch.habitat}}</p>
+          <p>About: {{finch.note}}</p>
+        </div>
+      </a>
+    </div>
+  {% endfor %}
+
+{% endblock %}
